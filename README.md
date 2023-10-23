@@ -1,5 +1,5 @@
 # Data-Mining
-This repository contains lab work on 
+This repository contains lab work and projects on 
 <br>
 1)PCA<br>
 2)Decision tree<br>
