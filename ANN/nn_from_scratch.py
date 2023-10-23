@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import math 
 
 global w1,b1,w2,b2
-
 random_matrix = np.random.randn(10,5)
 
 def relu(x):
@@ -99,17 +98,12 @@ def forward_pass(data):
   return z1,a1,z2,a2
 
 z1,a1,z2,a2= forward_pass(x_train)
-
 z1.shape,a1.shape,z2.shape,a2.shape
-
 image_matrix.shape
-
 y_train.shape
-
 w2.shape
 
 """##Loss and backpropagation equation derivation
-
 """
 
 def update_weights(learning_rate,x_batch,y_batch,one_hot_encoded,w1,b1,w2,b2):
@@ -118,7 +112,6 @@ def update_weights(learning_rate,x_batch,y_batch,one_hot_encoded,w1,b1,w2,b2):
   Y=one_hot_encoded
   dz2=a2-Y#...eqn1
   dw2=1/32*dz2.T@a1 #...eqn2
-
   db2=1/32*sum(dz2)
 
   dz1=dz2@w2*derivative_relu(z1)#...eqn3    * =elementwise matrix multiplication
@@ -171,7 +164,7 @@ def train_nn(train_data, test_data, epochs, lr, batch_size):
         print('Epoch:', i+1)
         print('Training accuracy:', calculate_accuracy(x_train, y_train))
         print('Validation accuracy:', calculate_accuracy(x_test, y_test))
-
+        
 train_nn(x_train, y_train, epochs=1, lr=0.5, batch_size=32)
 
 
